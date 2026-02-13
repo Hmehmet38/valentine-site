@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seninle Geçen En Mutlu Günler ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:black;
+color:white;
+overflow-x:hidden;
+}
+
+video{
+position:fixed;
+right:0;
+bottom:0;
+min-width:100%;
+min-height:100%;
+z-index:-1;
+object-fit:cover;
+opacity:0.4;
+}
+
+.container{
+text-align:center;
+padding:50px 20px;
+}
+
+h1{
+font-size:3rem;
+color:#ff4d6d;
+animation:fadeIn 3s ease-in-out;
+}
+
+p{
+margin-top:20px;
+font-size:1.2rem;
+max-width:700px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.gallery{
+margin-top:50px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.gallery img{
+width:250px;
+height:350px;
+object-fit:cover;
+border-radius:20px;
+transition:0.4s;
+box-shadow:0 0 20px rgba(255,0,100,0.5);
+}
+
+.gallery img:hover{
+transform:scale(1.1);
+}
+
+.heart{
+position:fixed;
+color:#ff4d6d;
+animation:float 5s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-10vh);}
+}
+
+@keyframes fadeIn{
+0%{opacity:0;}
+100%{opacity:1;}
+}
+
+button{
+margin-top:40px;
+padding:15px 30px;
+border:none;
+border-radius:30px;
+background:#ff4d6d;
+color:white;
+font-size:1rem;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#ff1e56;
+}
+</style>
+</head>
+<body>
+
+<video autoplay muted loop>
+<source src="video.mp4" type="video/mp4">
+</video>
+<audio id="bgMusic" autoplay loop muted>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+<div class="container">
+<h1>İyi ki Varsın Aşkım ❤️</h1>
+
+<p>
+Hayatıma girdiğin günden beri her şey daha güzel...
+Seninle geçen her an bir masal gibi. Bana hayatımın ilklerini yaşattın
+Bu küçük site sana olan sevgimin sadece minicik bir yansıması 💕
+</p>
+
+<button onclick="showMessage()">Sürprizi Aç 💌</button>
+
+<div class="gallery">
+<img src="images/foto1.jpg">
+<img src="images/foto2.jpg">
+<img src="images/foto3.jpg">
+</div>
+</div>
+
+
+
+<script>
+function showMessage(){
+alert("Seni her şeyden çok seviyorum. Her durumda ve koşulda yanındayım ❤️ Sonsuza kadar seninleyim!");
+}
+
+function createHeart(){
+const heart = document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=Math.random()*20+10+"px";
+document.body.appendChild(heart);
+setTimeout(()=>{heart.remove()},5000);
+}
+
+setInterval(createHeart,300);
+</script>
+
+
+</body>
+</html>
